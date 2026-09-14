@@ -9,5 +9,11 @@ frappe.ui.form.on("Expense Entry", {
 				is_group: 0,
 			},
 		}));
+		frm.set_query("account", "accounts", () => ({
+			filters: {
+				account_type: ["not in", ["Receivable", "Stock"]],
+				is_group: 0,
+			},
+		}));
 	},
 });
